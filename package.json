@@ -1,7 +1,7 @@
 {
   "name": "container",
   "version": "1.0.0",
-  "homepage": "http://shubhamdeodia.github.io/micro-frontend-container/",
+  "homepage": "https://shubhamdeodia.github.io/micro-frontend-container/",
   "scripts": {
     "start": "webpack serve --config config/webpack.dev.js",
     "build": "webpack --config config/webpack.prod.js",
