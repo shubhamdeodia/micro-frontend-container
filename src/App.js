@@ -9,12 +9,13 @@ const generateClassName = createGenerateClassName({
 })
 
 
-export default () => {
+export default ({authClient}) => {
+  
   return (
     <StylesProvider generateClassName={generateClassName}>
       <BrowserRouter>
         <div>
-          <Header />
+          <Header authClient={authClient} />
           <MarketingApp />
         </div>
       </BrowserRouter>
