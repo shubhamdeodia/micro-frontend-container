@@ -1,5 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import kcService from "./KcService";
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+kcService.initKeycloak(() =>
+  ReactDOM.render(<App />, document.getElementById("root"))
+);
