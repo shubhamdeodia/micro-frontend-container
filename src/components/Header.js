@@ -5,6 +5,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link as RouterLink } from "react-router-dom";
+import kcService from "../KcService.js";
 
 const useStyles = makeStyles((theme) => ({
   "@global": {
@@ -80,9 +81,11 @@ export default function Header() {
             variant="outlined"
             className={classes.link}
             component={RouterLink}
-            to="/"
+            onClick={
+              kcService.isLoggedIn() ? kcService.doLogout : kcService.doLogin
+            }
           >
-            {"Login"}
+            {kcService.isLoggedIn() ? "Logout" : "Login"}
           </Button>
         </Toolbar>
       </AppBar>
