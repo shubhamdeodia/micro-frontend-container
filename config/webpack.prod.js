@@ -5,12 +5,6 @@ const packageJson = require("../package.json");
 
 const { MARKETING_URL } = process.env;
 
-console.log(
-  "%c 🥨: MARKETING_URL ",
-  "font-size:16px;background-color:#83ca41;color:white;",
-  MARKETING_URL
-);
-
 const prodConfig = {
   mode: "production",
   output: {
