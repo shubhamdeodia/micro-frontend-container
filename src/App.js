@@ -6,7 +6,8 @@ import {
   StylesProvider,
   createGenerateClassName,
 } from "@material-ui/core/styles";
-
+import Todo from "./Todo";
+import kcService from "./KcService";
 const generateClassName = createGenerateClassName({
   productionPrefix: "con",
 });
@@ -17,6 +18,7 @@ export default () => {
       <BrowserRouter>
         <div>
           <Header />
+          <Todo kcService={kcService} />
           <MarketingApp routePrefix="/marketing" />
         </div>
       </BrowserRouter>

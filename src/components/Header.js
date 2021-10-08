@@ -81,6 +81,7 @@ export default function Header() {
             variant="outlined"
             className={classes.link}
             component={RouterLink}
+            to="#"
             onClick={
               kcService.isLoggedIn() ? kcService.doLogout : kcService.doLogin
             }
