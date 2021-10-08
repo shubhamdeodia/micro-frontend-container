@@ -32,7 +32,7 @@ export default function Todo({ kcService }) {
         "font-size:16px;background-color:#53b04a;color:white;",
         data
       );
-      // setTodoItemRecord(data);
+      setTodoItemRecord(data);
     })();
   }, []);
 
