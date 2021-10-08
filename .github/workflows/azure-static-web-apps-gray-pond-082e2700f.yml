@@ -8,6 +8,8 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
+env:
+  MARKETING_URL: ${{ secrets.MARKETING_URL }}
 
 jobs:
   build_and_deploy_job:
