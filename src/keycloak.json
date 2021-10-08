@@ -1,6 +1,6 @@
 {
   "realm": "NuanceCustomers",
-  "url": "https://mtl-neam-kc01.nuance.com:8443/auth/",
-  "clientId": "test-client",
+  "url": "https://neps.nuance.mobi/auth/",
+  "clientId": "neam-frontend",
   "public-client": true
 }

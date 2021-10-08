@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 
 export default function Todo({ kcService }) {
-  const [todoItemRecord, setTodoItemRecord] = useState();
+  const [data, setData] = useState();
 
   console.log(
     "%c 🦓: Todo ->   kcService.getToken() ",
@@ -32,22 +32,23 @@ export default function Todo({ kcService }) {
         "font-size:16px;background-color:#53b04a;color:white;",
         data
       );
-      setTodoItemRecord(data);
+      setData(data);
     })();
   }, []);
 
   return (
-    <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-      {todoItemRecord?.map((item) => (
-        <ListItem key={item.id} role={undefined} dense button>
-          <ListItemText id={item.id} primary={item.title} />
-          <ListItemSecondaryAction>
-            <IconButton edge="end" aria-label="comments">
-              <CommentIcon />
-            </IconButton>
-          </ListItemSecondaryAction>
-        </ListItem>
-      ))}
-    </List>
+    <span>Todo</span>
+    // <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
+    //   {data?.map((item) => (
+    //     <ListItem key={item.id} role={undefined} dense button>
+    //       <ListItemText id={item.id} primary={item.title} />
+    //       <ListItemSecondaryAction>
+    //         <IconButton edge="end" aria-label="comments">
+    //           <CommentIcon />
+    //         </IconButton>
+    //       </ListItemSecondaryAction>
+    //     </ListItem>
+    //   ))}
+    // </List>
   );
 }
