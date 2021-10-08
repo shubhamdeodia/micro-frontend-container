@@ -10,45 +10,48 @@ import {
 } from "@material-ui/core";
 
 export default function Todo({ kcService }) {
-  const [data, setData] = useState();
+  const [userData, setUserData] = useState(null);
 
-  console.log(
-    "%c 🦓: Todo ->   kcService.getToken() ",
-    "font-size:16px;background-color:#85e493;color:black;",
-    kcService.getToken()
-  );
+  const [todos, setTodos] = useState(null);
+
   useEffect(() => {
     (async function () {
       const requestOptions = {
         headers: { Authorization: `Bearer ${kcService.getToken()}` },
       };
 
-      const data = await (
+      const userdata = await (
         await fetch(`/api/effectiveuserprofile`, requestOptions)
       ).json();
 
-      console.log(
-        "%c 🧦: Todo -> data ",
-        "font-size:16px;background-color:#53b04a;color:white;",
-        data
-      );
-      setData(data);
+      const tododata = await (
+        await fetch(`api/todoitem`, requestOptions)
+      ).json();
+
+      setUserData(userdata);
+
+      setTodos(tododata);
     })();
   }, []);
 
+  console.log(
+    "%c 🧛‍♀️: Todo -> userData ",
+    "font-size:16px;background-color:#1b9156;color:white;",
+    userData
+  );
+
   return (
-    <span>Todo</span>
-    // <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-    //   {data?.map((item) => (
-    //     <ListItem key={item.id} role={undefined} dense button>
-    //       <ListItemText id={item.id} primary={item.title} />
-    //       <ListItemSecondaryAction>
-    //         <IconButton edge="end" aria-label="comments">
-    //           <CommentIcon />
-    //         </IconButton>
-    //       </ListItemSecondaryAction>
-    //     </ListItem>
-    //   ))}
-    // </List>
+    <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
+      {todos?.map((item) => (
+        <ListItem key={item.id} role={undefined} dense button>
+          <ListItemText id={item.id} primary={item.title} />
+          <ListItemSecondaryAction>
+            <IconButton edge="end" aria-label="comments">
+              <CommentIcon />
+            </IconButton>
+          </ListItemSecondaryAction>
+        </ListItem>
+      ))}
+    </List>
   );
 }
