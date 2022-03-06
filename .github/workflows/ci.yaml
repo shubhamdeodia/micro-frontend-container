@@ -25,6 +25,12 @@ jobs:
         run: echo Hello world from $GITHUB_HEAD_REF!
       - name: Hello world GITHUB_REF_NAME
         run: echo Hello world from $GITHUB_REF_NAME!
+      - name: Hello world GITHUB_BASE_REF
+        run: echo Hello world from $GITHUB_BASE_REF!
+      - name: Hello world GITHUB_REF
+        run: echo Hello world from $GITHUB_REF!
+      - name: Hello world github.event
+        run: echo ${{ toJson(github) }}
       - name: Checkout repository
         uses: actions/checkout@v2
 
