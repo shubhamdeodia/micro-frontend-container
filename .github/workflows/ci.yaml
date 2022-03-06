@@ -21,16 +21,10 @@ jobs:
         node-version: [14.x]
 
     steps:
-      - name: Hello world GITHUB_HEAD_REF
-        run: echo Hello world from $GITHUB_HEAD_REF!
-      - name: Hello world GITHUB_REF_NAME
-        run: echo Hello world from $GITHUB_REF_NAME!
-      - name: Hello world GITHUB_BASE_REF
-        run: echo Hello world from $GITHUB_BASE_REF!
-      - name: Hello world GITHUB_REF
-        run: echo Hello world from $GITHUB_REF!
-      - name: Hello world github.event
-        run: echo ${{ toJson(github) }}
+      - id: getjiraticket
+        run: echo "::set-output name=jiraticketid::`echo "${{ github.event.commits[0].message }}" | sed 's/\([0-9]\)-.*$/\1/'`"
+      - name: Print Jira Tikcet number
+        run: echo ${{ steps.getjiraticket.outputs.jiraticketid }}
       - name: Checkout repository
         uses: actions/checkout@v2
 
