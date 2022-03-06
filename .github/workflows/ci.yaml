@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: Logging
         run: |
-          echo "${{toJSON(github.event.commits)}}"
+          echo "${{toJSON(github)}}"
       - id: getjiraticket
         run: echo "::set-output name=jiraticketid::`echo "${{ github.event.commits[0].message }}" | sed -nE 's,[a-z]+/([A-Z]+-[0-9]+)-.+,\1,p'`"
       - name: Print Jira Tikcet number
