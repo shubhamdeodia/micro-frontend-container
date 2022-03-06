@@ -23,9 +23,9 @@ jobs:
     steps:
       - name: Logging
         run: |
-          echo "${{toJSON(github)}}"
+          echo "${{toJSON(github.event.head_commit.message )}}"
       - id: getjiraticket
-        run: echo "::set-output name=jiraticketid::`echo "${{ github.event.commits[0].message }}" | sed -nE 's,[a-z]+/([A-Z]+-[0-9]+)-.+,\1,p'`"
+        run: echo "::set-output name=jiraticketid::`echo "${{ github.event.head_commit.message }}" | sed -nE 's,[a-z]+/([A-Z]+-[0-9]+)-.+,\1,p'`"
       - name: Print Jira Tikcet number
         run: echo ${{ steps.getjiraticket.outputs.jiraticketid }}
       - name: Checkout repository
