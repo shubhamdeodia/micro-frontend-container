@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - id: getjiraticket
-        run: echo "::set-output name=jiraticketid::`echo "${{ github.event.commits[0].message }}" | sed 's/\([0-9]\)-.*$/\1/'`"
+        run: echo "::set-output name=jiraticketid::`echo "${{ github.event.commits[0].message }}" | sed -nE 's,[a-z]+/([A-Z]+-[0-9]+)-.+,\1,p'`"
       - name: Print Jira Tikcet number
         run: echo ${{ steps.getjiraticket.outputs.jiraticketid }}
       - name: Checkout repository
