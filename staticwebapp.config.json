@@ -4,9 +4,9 @@
       "customOpenIdConnectProviders": {
         "myProvider": {
           "registration": {
-            "clientIdSettingName": "docs-client",
+            "clientIdSettingName": "MY_PROVIDER_CLIENT_ID",
             "clientCredential": {
-              "clientSecretSettingName": "ab9d2e21-0a86-4a59-8793-8db9bc199f07"
+              "clientSecretSettingName": "MY_PROVIDER_CLIENT_SECRET"
             },
             "openIdConnectConfiguration": {
               "wellKnownOpenIdConfiguration": "https://mtl-neam-kc01.nuance.mobi:8443/auth/realms/NuanceCustomers/.well-known/openid-configuration"
