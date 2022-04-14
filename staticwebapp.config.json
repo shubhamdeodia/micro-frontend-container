@@ -1,0 +1,24 @@
+{
+  "auth": {
+    "identityProviders": {
+      "customOpenIdConnectProviders": {
+        "myProvider": {
+          "registration": {
+            "clientIdSettingName": "ent-portal-core",
+            "clientCredential": {
+              "clientSecretSettingName": "9545229d-2511-4e99-87c5-d566f88ba91c"
+            },
+            "openIdConnectConfiguration": {
+              "wellKnownOpenIdConfiguration": "https://mtl-neam-kc01.nuance.mobi:8443/auth/realms/NuanceCustomers/.well-known/openid-configuration"
+            }
+          },
+          "login": {
+            "nameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+            "scopes": [],
+            "loginParameterNames": []
+          }
+        }
+      }
+    }
+  }
+}
