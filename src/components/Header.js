@@ -75,18 +75,6 @@ export default function Header() {
           >
             App
           </Typography>
-          <Button
-            color="primary"
-            variant="outlined"
-            className={classes.link}
-            component={RouterLink}
-            to="#"
-            onClick={
-              kcService.isLoggedIn() ? kcService.doLogout : kcService.doLogin
-            }
-          >
-            {kcService.isLoggedIn() ? 'Logout' : 'Login'}
-          </Button>
         </Toolbar>
       </AppBar>
     </React.Fragment>

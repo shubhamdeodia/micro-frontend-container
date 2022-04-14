@@ -1,15 +1,13 @@
-import React from "react";
-import Header from "./components/Header";
-import MarketingApp from "marketing/MarketingApp";
-import { BrowserRouter } from "react-router-dom";
+import React from 'react';
+import Header from './components/Header';
+import MarketingApp from 'marketing/MarketingApp';
+import { BrowserRouter } from 'react-router-dom';
 import {
   StylesProvider,
   createGenerateClassName,
-} from "@material-ui/core/styles";
-import Todo from "./Todo";
-import kcService from "./KcService";
+} from '@material-ui/core/styles';
 const generateClassName = createGenerateClassName({
-  productionPrefix: "con",
+  productionPrefix: 'con',
 });
 
 export default () => {
@@ -18,7 +16,6 @@ export default () => {
       <BrowserRouter>
         <div>
           <Header />
-          <Todo kcService={kcService} />
           <MarketingApp routePrefix="/marketing" />
         </div>
       </BrowserRouter>

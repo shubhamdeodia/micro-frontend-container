@@ -4,9 +4,9 @@
       "customOpenIdConnectProviders": {
         "myProvider": {
           "registration": {
-            "clientIdSettingName": "ent-portal-core",
+            "clientIdSettingName": "docs-client",
             "clientCredential": {
-              "clientSecretSettingName": "9545229d-2511-4e99-87c5-d566f88ba91c"
+              "clientSecretSettingName": "ab9d2e21-0a86-4a59-8793-8db9bc199f07"
             },
             "openIdConnectConfiguration": {
               "wellKnownOpenIdConfiguration": "https://mtl-neam-kc01.nuance.mobi:8443/auth/realms/NuanceCustomers/.well-known/openid-configuration"
