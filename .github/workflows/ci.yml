@@ -1,4 +1,4 @@
-name: nuance-azure CI/CD
+name: Azure CI/CD
 
 on:
   push:

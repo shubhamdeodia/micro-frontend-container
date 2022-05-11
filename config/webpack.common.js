@@ -31,6 +31,7 @@ module.exports = {
         {
           from: 'staticwebapp.config.json',
           to: '',
+          noErrorOnMissing: true,
         },
       ],
     }),
