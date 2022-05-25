@@ -54,4 +54,3 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8A7CAAE330CC4A3AAC4A6E0B158B79BB }}
           package: ./build
-          startup-command: npx serve -s
