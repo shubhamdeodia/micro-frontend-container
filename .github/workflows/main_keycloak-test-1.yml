@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: .
+          path: ./build
 
   deploy:
     runs-on: ubuntu-latest
@@ -53,4 +53,5 @@ jobs:
           app-name: 'keycloak-test-1'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8A7CAAE330CC4A3AAC4A6E0B158B79BB }}
-          package: .
+          package: ./build
+          startup-command: npx serve -s
