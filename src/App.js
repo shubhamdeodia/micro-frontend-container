@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from './components/Header';
 import MarketingApp from 'marketing/MarketingApp';
 import { BrowserRouter } from 'react-router-dom';
@@ -11,9 +11,14 @@ const generateClassName = createGenerateClassName({
   productionPrefix: 'con',
 });
 
-console.log(process.env)
 
 export default () => {
+
+
+  useEffect(() => {
+    fetch('./auth/me').then((res) => res.json()).then((data) => console.log(data))
+  },[])
+
   return (
     <StylesProvider generateClassName={generateClassName}>
       <BrowserRouter>
