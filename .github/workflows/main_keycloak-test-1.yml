@@ -28,7 +28,7 @@ jobs:
           npm run test --if-present
 
       - name: 'Create archive of build'
-        run: tar -cvf artifact-build.tar ./build
+        run: tar -cvf artifact-build.tar ./build .github/scripts
       - name: 'Upload artifact'
         uses: actions/upload-artifact@v2
         with:
@@ -43,17 +43,23 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
-      - name: Download artifact from build job
+      - name: 'Download artifact'
         uses: actions/download-artifact@v2
         with:
           name: artifact-build
       - name: 'Extract files'
         run: tar -xf artifact-build.tar
+      - name: 'Install Azure CLI'
+        run: sh ./.github/scripts/install-azure-cli.sh
+      - name: 'Log into Azure CLI with service principal'
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.WEB_APP_SP }}
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'keycloak-test-1'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8A7CAAE330CC4A3AAC4A6E0B158B79BB }}
           package: ./build
+          startup-command: npx serve -s
