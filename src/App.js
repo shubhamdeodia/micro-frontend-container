@@ -11,6 +11,8 @@ const generateClassName = createGenerateClassName({
   productionPrefix: 'con',
 });
 
+console.log(process.env)
+
 export default () => {
   return (
     <StylesProvider generateClassName={generateClassName}>
