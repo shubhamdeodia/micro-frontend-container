@@ -3,7 +3,7 @@ name: Build and Deploy to App Service
 on:
   push:
     branches:
-      - develop
+      - main
 
 env:
   AZURE_APP_SERVICE_NAME: 'micro-frontend-container'
