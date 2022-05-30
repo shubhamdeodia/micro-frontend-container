@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  micro-frontend-container:
+    container_name: micro-frontend-container
+    image: shubhamdregistry.azurecr.io/micro-frontend-container:develop
+    build:
+      context: ../
+      dockerfile: ./infra/Dockerfile
+    ports:
+         - "80:8080"

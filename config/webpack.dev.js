@@ -15,7 +15,7 @@ const devConfig = {
     new ModuleFederationPlugin({
       name: "container",
       remotes: {
-        marketing: "marketing@http://localhost:8081/remoteEntry.js",
+        marketing: "marketing@https://green-mushroom-000afad10.1.azurestaticapps.net/remoteEntry.js",
       },
       shared: packageJson.dependencies,
     }),
