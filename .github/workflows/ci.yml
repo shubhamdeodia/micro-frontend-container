@@ -38,8 +38,8 @@ jobs:
 
       - name: Build Docker image
         run: docker build .
-          --file infrastructure/Dockerfile
-          --build-arg GIT_SHA=${{ github.sha  }}
+          --file infra/Dockerfile
+          --build-arg GIT_SHA=${{ github.sha }}
           --tag ndepportal.azurecr.io/operational-management:develop
 
       - name: Push to Azure Container Registry
