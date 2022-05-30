@@ -5,7 +5,7 @@ WORKDIR /app
 
 COPY package*.json .
 
-COPY . .
+COPY . ./
 
 RUN npm install --ignore-scripts
 
