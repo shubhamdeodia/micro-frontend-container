@@ -9,7 +9,7 @@ env:
   AZURE_APP_SERVICE_NAME: 'micro-frontend-container'
 
 concurrency:
-  group: deploy-develop
+  group: deploy-main
   cancel-in-progress: true
 
 jobs:
@@ -40,10 +40,10 @@ jobs:
         run: docker build .
           --file infra/Dockerfile
           --build-arg GIT_SHA=${{ github.sha }}
-          --tag shubhamdregistry.azurecr.io/micro-frontend-container:develop
+          --tag shubhamdregistry.azurecr.io/micro-frontend-container:main
 
       - name: Push to Azure Container Registry
-        run: docker push shubhamdregistry.azurecr.io/micro-frontend-container:develop
+        run: docker push shubhamdregistry.azurecr.io/micro-frontend-container:main
 
       - name: Deploy App Service
         uses: azure/webapps-deploy@v2
