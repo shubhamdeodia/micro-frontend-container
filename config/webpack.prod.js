@@ -4,7 +4,8 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const commonConfig = require('./webpack.common');
 const packageJson = require('../package.json');
 
-const { MARKETING_URL = 'https://green-mushroom-000afad10.1.azurestaticapps.net' } = process.env;
+
+const { MARKETING_URL } = process.env;
 
 const BUILD_DIR = path.resolve(__dirname, '../build');
 
