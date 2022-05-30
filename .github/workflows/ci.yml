@@ -44,8 +44,3 @@ jobs:
 
       - name: Push to Azure Container Registry
         run: docker push shubhamdregistry.azurecr.io/micro-frontend-container:main
-
-      - name: Deploy App Service
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: ${{ env.AZURE_APP_SERVICE_NAME }}
