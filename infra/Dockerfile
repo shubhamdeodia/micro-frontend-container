@@ -3,9 +3,9 @@ FROM node:16-alpine AS builder
 
 WORKDIR /app
 
-COPY package*.json .
+COPY package*.json ./
 
-COPY . ./
+COPY . .
 
 RUN npm install --ignore-scripts
 
