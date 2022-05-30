@@ -8,3 +8,5 @@ services:
       dockerfile: ./infra/Dockerfile
     ports:
          - 80:8080
+    environment:
+      - MARKETING_URL
