@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Header from './components/Header';
 import MarketingApp from 'marketing/MarketingApp';
 import { BrowserRouter } from 'react-router-dom';
+import Config from "./config.json";
 import {
   StylesProvider,
   createGenerateClassName,
@@ -12,8 +13,10 @@ const generateClassName = createGenerateClassName({
 });
 
 
+
 export default () => {
 
+  console.log(Config.TEST)
 
   useEffect(() => {
     fetch('./auth/me').then((res) => res.json()).then((data) => console.log(data))
