@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+
+# App Service run our docker container inside its own docker container, we need to expose App Settings env variable inside our docker container.
 eval $(printenv | sed -n "s/^\([^=]\+\)=\(.*\)$/export \1=\2/p" | sed 's/"/\\\"/g' | sed '/=/s//="/' | sed 's/$/"/' >> /etc/profile)
 
 #!/usr/bin/env sh
