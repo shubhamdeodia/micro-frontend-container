@@ -50,6 +50,6 @@ RUN chmod 777 -R /usr/share/nginx/html && \
 RUN touch /var/run/nginx.pid && \
     chmod 777 -R /var/run/nginx.pid
 
-EXPOSE 80
+EXPOSE 8080 80
 
 ENTRYPOINT [ "start-nginx.sh" ]
