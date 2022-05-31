@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Header from './components/Header';
 import MarketingApp from 'marketing/MarketingApp';
 import { BrowserRouter } from 'react-router-dom';
+import Config from "./config.json";
 import {
   StylesProvider,
   createGenerateClassName,
@@ -11,14 +12,9 @@ const generateClassName = createGenerateClassName({
   productionPrefix: 'con',
 });
 
-
+console.log(Config)
 
 export default () => {
-
-  useEffect(() => {
-    fetch('./config.json"').then((res) => res.json()).then((data) => console.log(data))
-  },[])
-
   return (
     <StylesProvider generateClassName={generateClassName}>
       <BrowserRouter>
