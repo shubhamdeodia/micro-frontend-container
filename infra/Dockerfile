@@ -28,6 +28,10 @@ RUN rm /etc/nginx/conf.d/default.conf
 
 COPY ./infra/nginx.conf /etc/nginx/conf.d/application.conf
 
+COPY ./infra/startup.sh ./
+
+RUN chmod 777 -R ./startup.sh
+
 ## add permissions for nginx user
 RUN chmod 777 -R /usr/share/nginx/html && \
     chmod 777 -R /var/cache/nginx && \
@@ -37,7 +41,7 @@ RUN chmod 777 -R /usr/share/nginx/html && \
 RUN touch /var/run/nginx.pid && \
     chmod 777 -R /var/run/nginx.pid
 
-ENTRYPOINT "./startup.sh run"
+ENTRYPOINT [ "./startup.sh" ]
 
 # run the bash file and then start Nginx server
 CMD ["/bin/bash", "-c", "nginx -g \"daemon off;\""]
