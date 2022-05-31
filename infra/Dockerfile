@@ -41,6 +41,8 @@ RUN chmod 777 -R /usr/share/nginx/html && \
 RUN touch /var/run/nginx.pid && \
     chmod 777 -R /var/run/nginx.pid
 
+EXPOSE 80
+
 ENTRYPOINT [ "./startup.sh" ]
 
 # run the bash file and then start Nginx server
