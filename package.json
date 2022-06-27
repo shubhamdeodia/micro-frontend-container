@@ -5,7 +5,6 @@
     "start": "webpack serve --config config/webpack.dev.js",
     "build": "webpack --config config/webpack.prod.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "release": "release-it"
   },
   "dependencies": {
