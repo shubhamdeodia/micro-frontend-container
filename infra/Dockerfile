@@ -27,7 +27,7 @@ FROM nginx:alpine AS runtime
 
 COPY --from=builder ./app/build /usr/share/nginx/html
 
-ENV JSFOLDER=/usr/share/nginx/html/js/*.json
+ENV JSFOLDER=/usr/share/nginx/html/js
 
 # Alpine docker image doesn't have bash installed by default. 
 # You will need to add the following commands to get bash:

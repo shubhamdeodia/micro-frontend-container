@@ -1,0 +1,39 @@
+name: Release
+
+on:
+  push:
+      tags:
+        - '*'
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set output
+        id: vars
+        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+
+      - name: Install Azure CLI
+        run: sh ./.github/scripts/install-azure-cli.sh
+
+      - name: Log into Azure CLI with service principal
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.WEB_APP_SP }}
+
+      - name: Log into Azure Container Registry
+        uses: azure/docker-login@v1
+        with:
+          login-server: shubhamdregistry.azurecr.io
+          username: ${{ secrets.ACR_USER }}
+          password: ${{ secrets.ACR_PASSWORD }}
+
+      - name: Build Docker image
+        run: docker build .
+          --file infra/Dockerfile
+          --build-arg GIT_SHA=${{ github.sha }}
+          --tag shubhamdregistry.azurecr.io/micro-frontend-container:${{ steps.vars.outputs.tag }}
+
+      - name: Push to Azure Container Registry
+        run: docker push shubhamdregistry.azurecr.io/micro-frontend-container:${{ steps.vars.outputs.tag }}
