@@ -3,13 +3,10 @@ import Header from './components/Header';
 import MarketingApp from 'marketing/MarketingApp';
 import { BrowserRouter } from 'react-router-dom';
 import Config from "./config.json";
-import {
-  StylesProvider,
-  createGenerateClassName,
-} from '@material-ui/core/styles';
+import { StylesProvider, createGenerateClassName } from '@mui/styles';
 
 const generateClassName = createGenerateClassName({
-  productionPrefix: 'con',
+  productionPrefix: "mar",
 });
 
 console.log(Config)
