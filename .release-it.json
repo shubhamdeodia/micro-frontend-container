@@ -3,6 +3,7 @@
     "release": true
   },
   "npm": {
-    "release": false
+    "publish": true,
+    "skipChecks": true
   }
 }
