@@ -28,7 +28,7 @@
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.3.0",
-    "git-cz": "^4.9.0",
+    "cz-conventional-changelog": "^3.3.0",
     "html-webpack-plugin": "^5.3.2",
     "release-it": "^15.1.0",
     "style-loader": "^3.3.0",
@@ -39,7 +39,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/git-cz"
+      "path": "./node_modules/cz-conventional-changelog"
     }
   }
 }
