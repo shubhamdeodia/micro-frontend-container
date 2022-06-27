@@ -1,11 +1,12 @@
 module.exports = {
     disableEmoji: false,
-    format: '{type}{scope}: {emoji}{subject}',
+    format: '{type}{scope}: {emoji}{subject} {jira}',
     list: ['test', 'feat', 'fix', 'chore', 'docs', 'refactor', 'style', 'ci', 'perf'],
     maxMessageLength: 64,
     minMessageLength: 3,
-    questions: ['type', 'scope', 'subject', 'body', 'breaking', 'issues', 'lerna'],
+    questions: ['type', 'scope', 'jira', 'subject', 'body', 'breaking'],
     scopes: [],
+    jira: [],
     types: {
       chore: {
         description: 'Build process or auxiliary tool changes',
@@ -59,12 +60,11 @@ module.exports = {
       },
       messages: {
         type: 'Select the type of change that you\'re committing:',
-        customScope: 'Select the scope this component affects:',
+        scope: 'Select the scope this component affects:',
+        jira: 'Enter JIRA ticket, e.g EFESOL-123:\n',
         subject: 'Write a short, imperative mood description of the change:\n',
         body: 'Provide a longer description of the change:\n ',
         breaking: 'List any breaking changes:\n',
-        footer: 'Issues this commit closes, e.g EFESOL-123:',
-        confirmCommit: 'The packages that this commit has affected\n',
       },
     }
   };
