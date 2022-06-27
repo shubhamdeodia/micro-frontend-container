@@ -63,7 +63,7 @@ module.exports = {
         subject: 'Write a short, imperative mood description of the change:\n',
         body: 'Provide a longer description of the change:\n ',
         breaking: 'List any breaking changes:\n',
-        re: 'Issues this commit closes, e.g EFESOL-123:',
+        footer: 'Issues this commit closes, e.g EFESOL-123:',
         confirmCommit: 'The packages that this commit has affected\n',
       },
     }
