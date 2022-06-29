@@ -11,6 +11,7 @@ const generateClassName = createGenerateClassName({
 
 
 //feature - 1
+//bugfix - 1
 console.log(Config)
 
 export default () => {
