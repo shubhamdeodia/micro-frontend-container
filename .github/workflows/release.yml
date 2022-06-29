@@ -33,7 +33,7 @@ jobs:
         run: docker build .
           --file infra/Dockerfile
           --build-arg GIT_SHA=${{ github.sha }}
-          --tag shubhamdregistry.azurecr.io/micro-frontend-container:${{ steps.vars.outputs.tag }}
+          --tag shubhamdregistry.azurecr.io/micro-frontend-container:v${{ steps.vars.outputs.tag }}
 
       - name: Push to Azure Container Registry
-        run: docker push shubhamdregistry.azurecr.io/micro-frontend-container:${{ steps.vars.outputs.tag }}
+        run: docker push shubhamdregistry.azurecr.io/micro-frontend-container:v${{ steps.vars.outputs.tag }}
