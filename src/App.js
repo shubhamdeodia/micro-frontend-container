@@ -12,6 +12,8 @@ const generateClassName = createGenerateClassName({
 
 // commit - 1
 // commit - 3
+// commit - 4
+// bugfix - 1
 console.log(Config)
 
 export default () => {
