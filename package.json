@@ -6,7 +6,7 @@
     "start": "webpack serve --config config/webpack.dev.js",
     "build": "webpack --config config/webpack.prod.js",
     "predeploy": "npm run build",
-    "release": "release-it"
+    "release": "release-it --no-git.requireUpstream"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
