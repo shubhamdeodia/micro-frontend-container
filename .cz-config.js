@@ -16,12 +16,9 @@ module.exports = {
         value: 'chore',
         name: 'chore:    Changes to the build process or auxiliary tools\n            and libraries such as documentation generation',
       },
-      { value: 'revert', name: 'revert:   Revert to a commit' },
       { value: 'WIP', name: 'WIP:      Work in progress' },
     ],
-  
     scopes: [],
-  
     allowTicketNumber: true,
     isTicketNumberRequired: true,
     // ticketNumberPrefix: 'EFESOL-',
@@ -30,7 +27,7 @@ module.exports = {
     // it needs to match the value for field type. Eg.: 'fix'
     
     scopeOverrides: {
-      fix: [
+      feat: [
         {name: 'core'},
         {name: 'bl'},
         {name: 'pt'},
