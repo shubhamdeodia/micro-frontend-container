@@ -24,27 +24,63 @@ module.exports = {
   
     allowTicketNumber: true,
     isTicketNumberRequired: true,
-    ticketNumberPrefix: 'EFESOL-',
-    ticketNumberRegExp: '\\d{1,5}',
+    // ticketNumberPrefix: 'EFESOL-',
+    // ticketNumberRegExp: '\\d{1,5}',
   
     // it needs to match the value for field type. Eg.: 'fix'
-    /*
+    
     scopeOverrides: {
       fix: [
-  
-        {name: 'merge'},
-        {name: 'style'},
-        {name: 'e2eTest'},
-        {name: 'unitTest'}
+        {name: 'core'},
+        {name: 'bl'},
+        {name: 'pt'},
+        {name: 'odi'},
+        {name: 'pur'},
+        {name: 'tsr'},
+        {name: 'tsr'},
+        {name: 'lv'},
+        {name: 'icv'},
+      ], 
+      fix: [
+        {name: 'core'},
+        {name: 'bl'},
+        {name: 'pt'},
+        {name: 'odi'},
+        {name: 'pur'},
+        {name: 'tsr'},
+        {name: 'tsr'},
+        {name: 'lv'},
+        {name: 'icv'},
+      ],
+      refactor: [
+        {name: 'core'},
+        {name: 'bl'},
+        {name: 'pt'},
+        {name: 'odi'},
+        {name: 'pur'},
+        {name: 'tsr'},
+        {name: 'tsr'},
+        {name: 'lv'},
+        {name: 'icv'},
+      ],
+      chore: [
+        {name: 'core'},
+        {name: 'bl'},
+        {name: 'pt'},
+        {name: 'odi'},
+        {name: 'pur'},
+        {name: 'tsr'},
+        {name: 'tsr'},
+        {name: 'lv'},
+        {name: 'icv'},
       ]
     },
-    */
     // override the messages, defaults are as follows
     messages: {
       type: "Select the type of change that you're committing:",
-      scope: '\nDenote the SCOPE of this change (optional):',
+      // scope: '\nDenote the SCOPE of this change (optional):',
       // used if allowCustomScopes is true
-      customScope: 'Denote the SCOPE of this change:',
+      customScope: 'Denote the SCOPE of this change (optional):',
       subject: 'Write a SHORT, IMPERATIVE tense description of the change:\n',
       body: 'Provide a LONGER description of the change (optional). Use "|" to break new line:\n',
       breaking: 'List any BREAKING CHANGES (optional):\n',
@@ -53,7 +89,6 @@ module.exports = {
     },
   
     allowCustomScopes: true,
-    allowBreakingChanges: ['fix'],
     // skip any questions you want
     skipQuestions: ['body'],
   
