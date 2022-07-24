@@ -8,7 +8,7 @@
   },
   "github": {
     "release": true,
-    "autoGenerate": false
+    "autoGenerate": true
   },
   "plugins": {
     "@release-it/conventional-changelog": {
