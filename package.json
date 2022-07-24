@@ -1,6 +1,6 @@
 {
   "name": "container",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "scripts": {
     "commit": "./node_modules/cz-customizable/standalone.js",
     "start": "webpack serve --config config/webpack.dev.js",
