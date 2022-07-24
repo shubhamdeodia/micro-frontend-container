@@ -1,8 +1,8 @@
 {
   "name": "container",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "scripts": {
-    "commit": "git-cz",
+    "commit": "./node_modules/cz-customizable/standalone.js",
     "start": "webpack serve --config config/webpack.dev.js",
     "build": "webpack --config config/webpack.prod.js",
     "predeploy": "npm run build",
@@ -41,10 +41,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/@digitalroute/cz-conventional-changelog-for-jira",
-      "jiraLocation": "post-description",
-      "jiraPrepend": "[",
-      "jiraAppend": "]"
+      "path": "node_modules/cz-customizable"
     }
   }
 }
