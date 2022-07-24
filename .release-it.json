@@ -11,9 +11,6 @@
     "release": true,
     "autoGenerate": true
   },
-  "gitlab": {
-    "release": true
-  },
   "plugins": {
     "@release-it/conventional-changelog": {
       "writerOpts": {
