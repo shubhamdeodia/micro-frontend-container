@@ -13,6 +13,7 @@ const generateClassName = createGenerateClassName({
 //feature - 1
 //bugfix - 1
 //feature - 2
+//chore - 1
 console.log(Config)
 
 export default () => {
