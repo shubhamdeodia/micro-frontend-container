@@ -4,14 +4,21 @@
   },
   "git": {
     "changelog": "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/cookpete/auto-changelog/master/templates/compact.hbs",
-    "commitMessage": "chore: release v${version}"
+    "commitMessage": "chore: release v${version}",
+    "requireUpstream": false
   },
   "github": {
     "release": true,
     "autoGenerate": true
   },
+  "gitlab": {
+    "release": true
+  },
   "plugins": {
     "@release-it/conventional-changelog": {
+      "writerOpts": {
+        "groupBy": "scope"
+      },
       "infile": "CHANGELOG.md",
       "ignoreRecommendedBump": true,
       "preset": {
@@ -24,6 +31,14 @@
           {
             "type": "fix",
             "section": "Bug Fixes"
+          },
+          {
+            "type": "refactor",
+            "section": "Additional Changes"
+          },
+          {
+            "type": "chore",
+            "section": "Additional Changes"
           }
         ]
       }
