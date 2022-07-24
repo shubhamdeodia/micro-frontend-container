@@ -13,9 +13,6 @@
   },
   "plugins": {
     "@release-it/conventional-changelog": {
-      "writerOpts": {
-        "groupBy": "scope"
-      },
       "infile": "CHANGELOG.md",
       "ignoreRecommendedBump": true,
       "preset": {
