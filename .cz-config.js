@@ -1,98 +1,96 @@
 module.exports = {
-    types: [
-      { value: 'feat', name: 'feat:     A new feature' },
-      { value: 'fix', name: 'fix:      A bug fix' },
-      { value: 'docs', name: 'docs:     Documentation only changes' },
-      {
-        value: 'refactor',
-        name: 'refactor: A code change that neither fixes a bug nor adds a feature',
-      },
-      {
-        value: 'perf',
-        name: 'perf:     A code change that improves performance',
-      },
-      { value: 'test', name: 'test:     Adding missing tests' },
-      {
-        value: 'chore',
-        name: 'chore:    Changes to the build process or auxiliary tools\n            and libraries such as documentation generation',
-      },
-      { value: 'WIP', name: 'WIP:      Work in progress' },
+  allowCustomScopes: true,
+  allowTicketNumber: true,
+  isTicketNumberRequired: true,
+  // override the messages, defaults are as follows
+  messages: {
+    body: 'Provide a LONGER description of the change (optional). Use "|" to break new line:\n',
+
+    breaking: 'List any BREAKING CHANGES (optional):\n',
+
+    confirmCommit: 'Are you sure you want to proceed with the commit above?',
+    // scope: '\nDenote the SCOPE of this change (optional):',
+    // used if allowCustomScopes is true
+    customScope: 'Denote the SCOPE of this change (optional):',
+    footer: 'List any JIRA Ticket it closes. E.g.: #EFESOL-123, #EPFEBL-123:\n',
+    subject: 'Write a SHORT, IMPERATIVE tense description of the change:\n',
+    type: "Select the type of change that you're committing:",
+  },
+
+  // ticketNumberPrefix: 'EFESOL-',
+  // ticketNumberRegExp: '\\d{1,5}',
+  // it needs to match the value for field type. Eg.: 'fix'
+  scopeOverrides: {
+    chore: [
+      { name: 'CORE' },
+      { name: 'BL' },
+      { name: 'PT' },
+      { name: 'ODI' },
+      { name: 'PUR' },
+      { name: 'TSR' },
+      { name: 'LV' },
+      { name: 'ICV' },
     ],
-    scopes: [],
-    allowTicketNumber: true,
-    isTicketNumberRequired: true,
-    // ticketNumberPrefix: 'EFESOL-',
-    // ticketNumberRegExp: '\\d{1,5}',
-  
-    // it needs to match the value for field type. Eg.: 'fix'
-    
-    scopeOverrides: {
-      feat: [
-        {name: 'core'},
-        {name: 'bl'},
-        {name: 'pt'},
-        {name: 'odi'},
-        {name: 'pur'},
-        {name: 'tsr'},
-        {name: 'tsr'},
-        {name: 'lv'},
-        {name: 'icv'},
-      ], 
-      fix: [
-        {name: 'core'},
-        {name: 'bl'},
-        {name: 'pt'},
-        {name: 'odi'},
-        {name: 'pur'},
-        {name: 'tsr'},
-        {name: 'tsr'},
-        {name: 'lv'},
-        {name: 'icv'},
-      ],
-      refactor: [
-        {name: 'core'},
-        {name: 'bl'},
-        {name: 'pt'},
-        {name: 'odi'},
-        {name: 'pur'},
-        {name: 'tsr'},
-        {name: 'tsr'},
-        {name: 'lv'},
-        {name: 'icv'},
-      ],
-      chore: [
-        {name: 'core'},
-        {name: 'bl'},
-        {name: 'pt'},
-        {name: 'odi'},
-        {name: 'pur'},
-        {name: 'tsr'},
-        {name: 'tsr'},
-        {name: 'lv'},
-        {name: 'icv'},
-      ]
+    feat: [
+      { name: 'CORE' },
+      { name: 'BL' },
+      { name: 'PT' },
+      { name: 'ODI' },
+      { name: 'PUR' },
+      { name: 'TSR' },
+      { name: 'LV' },
+      { name: 'ICV' },
+    ],
+    fix: [
+      { name: 'CORE' },
+      { name: 'BL' },
+      { name: 'PT' },
+      { name: 'ODI' },
+      { name: 'PUR' },
+      { name: 'TSR' },
+      { name: 'LV' },
+      { name: 'ICV' },
+    ],
+    refactor: [
+      { name: 'CORE' },
+      { name: 'BL' },
+      { name: 'PT' },
+      { name: 'ODI' },
+      { name: 'PUR' },
+      { name: 'TSR' },
+      { name: 'LV' },
+      { name: 'ICV' },
+    ],
+  },
+
+  scopes: [],
+
+  // skip any questions you want
+  skipQuestions: ['body'],
+
+  // limit subject length
+  subjectLimit: 100,
+
+  types: [
+    { name: 'feat:     A new feature', value: 'feat' },
+    { name: 'fix:      A bug fix', value: 'fix' },
+    { name: 'docs:     Documentation only changes', value: 'docs' },
+    {
+      name: 'refactor: A code change that neither fixes a bug nor adds a feature',
+      value: 'refactor',
     },
-    // override the messages, defaults are as follows
-    messages: {
-      type: "Select the type of change that you're committing:",
-      // scope: '\nDenote the SCOPE of this change (optional):',
-      // used if allowCustomScopes is true
-      customScope: 'Denote the SCOPE of this change (optional):',
-      subject: 'Write a SHORT, IMPERATIVE tense description of the change:\n',
-      body: 'Provide a LONGER description of the change (optional). Use "|" to break new line:\n',
-      breaking: 'List any BREAKING CHANGES (optional):\n',
-      footer: 'List any JIRA Ticket it closes. E.g.: #EFESOL-123, #EPFEBL-123:\n',
-      confirmCommit: 'Are you sure you want to proceed with the commit above?',
+    {
+      name: 'perf:     A code change that improves performance',
+      value: 'perf',
     },
-  
-    allowCustomScopes: true,
-    // skip any questions you want
-    skipQuestions: ['body'],
-  
-    // limit subject length
-    subjectLimit: 100,
-    // breaklineChar: '|', // It is supported for fields body and footer.
-    // footerPrefix : 'ISSUES CLOSED:'
-    // askForBreakingChangeFirst : true, // default is false
-  };
-  
+    { name: 'test:     Adding missing tests', value: 'test' },
+    {
+      name: 'chore:    Changes to the build process or auxiliary tools\n            and libraries such as documentation generation',
+      value: 'chore',
+    },
+    { name: 'WIP:      Work in progress', value: 'WIP' },
+  ],
+  // breaklineChar: '|', // It is supported for fields body and footer.
+  // footerPrefix : 'ISSUES CLOSED:'
+  // askForBreakingChangeFirst : true, // default is false
+};
